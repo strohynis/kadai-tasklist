@@ -1,16 +1,15 @@
 <h1>ユーザ登録</h1>
 
 <%= form_with(model: @user, local: true) do |f| %>
-  <%= render 'layouts/error_messages', model: f.object %>
-    <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <% if @user.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
       
   <div class="form-group">
     <%= f.label :name, '氏名' %>
